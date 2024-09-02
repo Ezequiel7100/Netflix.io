@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/mapa.css">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <title>Mapa</title>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logotipo">NETFLIX</h2>
+            <nav>
+                <a href="./index.html">Inicio</a>
+                <a href="#" class="activo">Mapa</a>
+            </nav>
+        </div>
+    </header>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        // Inicializar el mapa centrado en una coordenada específica
+        var map = L.map('map').setView([-32.889458, -68.845839], 13);
+
+        // Añadir una capa de mapa (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Lista de lugares de recuerdos (nombre, latitud, longitud, descripción)
+        var lugares = [
+            {
+                nombre: "Parque General San Martín",
+                lat: -32.896073,
+                lng: -68.867365,
+                descripcion: "nos juntamos varias veces"
+            },
+            {
+                nombre: "Palmares cine",
+                lat: -32.956667,
+                lng: -68.830832,
+                descripcion: "Simpre vamos a ver peliculas a palmares."
+            },
+            {
+                nombre: "Shiiko Sushi",
+                lat: -32.897900,
+                lng: -68.852425,
+                descripcion: "Sushi libre jujujuuu."
+            },
+            {
+                nombre: "Parque Canota",
+                lat: -32.929200,
+                lng: -68.791502,
+                descripcion: "Nuestra primera cita."
+
+            }
+        ];
+
+        // Añadir marcadores al mapa
+        lugares.forEach(function (lugar) {
+            var marker = L.marker([lugar.lat, lugar.lng]).addTo(map);
+            marker.bindPopup("<b>" + lugar.nombre + "</b><br>" + lugar.descripcion);
+        });
+    </script>
+</body>
+
+</html>

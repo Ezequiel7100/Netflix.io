@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>NetflixParaMiPollito</title>
+</head>
+
+<body >
+    <header>
+        <div class="contenedor">
+            <h2 class="logotipo">NETFLIX</h2>
+            <nav>
+                <a href="#" class="activo">Inicio</a>
+                <a href="./carta.html">Carta</a>
+                <a href="./promos.html">Promociones</a>
+                <a href="#">Mi lista</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="pelicula-principal">
+            <div class="contenedor scroll-animation">
+                <h3 class="titulo fade-in">Nuestra Historia</h3>
+                <p class="descripcion fade-in">
+                    Ezequiel y Celeste, una pareja que comenzó su aventura juntos el 22 de diciembre de 2022, exploran el universo de su amor mientras enfrentan los desafíos de la vida cotidiana. A través de momentos compartidos y experiencias que los unen, descubren que su conexión es tan profunda como el cosmos. En su viaje, aprenden que el verdadero valor de su relación 
+                    reside en cada pequeño gesto y en el apoyo mutuo, revelando que su historia es una obra de amor que trasciende el tiempo y el espacio.
+                </p>
+                <button role="button" class="boton"><i class="fa-solid fa-play"></i>Reproducir</button>
+                <button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
+            </div>
+        </div>
+        
+        <div class="contenedor scroll-animation">
+            <h2 class="logotipo">MOMENTOS DESTACADOS</h2>
+            <div class="fotos">
+                <article class="fade-in">
+                    <img src="./img/imagenRio.jpeg" alt="">
+                    <img src="./img/imagenRio-removebg-preview.png" alt="">
+                </article>
+                <article class="fade-in">
+                    <img src="./img/imagenPotre.jpg" alt="">
+                    <img src="./img/imagenPotre-removebg-preview.png" alt="">
+                </article>
+            </div>
+        </div>
+        <div class="contenedor-principal scroll-animation">
+                    <h1 class="logotipo">MOMENTOS</h1>     
+                <div class="galeria">
+                    <div class="galeria-wrapper">
+                        <div class="peliculas">
+                            <div class="pelicula">
+                                <img src="./img/imagen1.jpg" alt="Pelicula 1">
+                                <p class="titul">Bajo las Estrellas</p>
+                            </div>
+                            <div class="pelicula">
+                                <img src="./img/imagen2.jpg" alt="Pelicula 2">
+                                <p class="titul">Aventura Sin Fin</p>
+                            </div>
+                            <div class="pelicula">
+                                <img src="./img/imagen3.jpg" alt="Pelicula 3">
+                                <p class="titul">Momentos Eternos</p>
+                            </div>
+                            <div class="pelicula">
+                                <img src="./img/imagen4.jpg" alt="Pelicula 3">
+                                <p class="titul">Destinos Cruzados</p>
+                            </div>
+                            <div class="pelicula">
+                                <img src="./img/imagen5.jpg" alt="Pelicula 3">
+                                <p class="titul">Una Noche Inolvidable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </main>
+    <footer class="netflix-footer">
+        <div class="footer-columns">
+          <ul>
+            <li><a href="#">Audio y subtítulos</a></li>
+            <li><a href="#">Centro de ayuda</a></li>
+            <li><a href="#">Tarjetas de regalo</a></li>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Relaciones con inversionistas</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Empleo</a></li>
+            <li><a href="#">Términos de uso</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Preferencias de cookies</a></li>
+            <li><a href="#">Información corporativa</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Contáctanos</a></li>
+            <li><a href="#">Prueba de velocidad</a></li>
+            <li><a href="#">Avisos legales</a></li>
+            <li><a href="#">Originales de Netflix</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 Netflix Clone - Hecho con ❤️ para Celeste</p>
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script>
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+      
+        const elementInView = (el, dividend = 1) => {
+          const elementTop = el.getBoundingClientRect().top;
+      
+          return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+          );
+        };
+      
+        const displayScrollElement = (element) => {
+          element.classList.add('visible');
+        };
+      
+        const hideScrollElement = (element) => {
+          element.classList.remove('visible');
+        };
+      
+        const handleScrollAnimation = () => {
+          scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+              displayScrollElement(el);
+            } else {
+              hideScrollElement(el);
+            }
+          });
+        };
+      
+        window.addEventListener('scroll', () => {
+          handleScrollAnimation();
+        });
+      </script>
+</body>
+
+</html>

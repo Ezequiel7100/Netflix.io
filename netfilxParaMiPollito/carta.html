@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/carta.css">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>carta</title>
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h2 class="logotipo">NETFLIX</h2>
+            <nav>
+                <a href="./index.html">Inicio</a>
+                <a href="#" class="activo">Carta</a>
+            </nav>
+        </div>
+    </header>
+    <div class="carta-container">
+        <p id="carta"></p>
+    </div>
+    <footer class="netflix-footer">
+        <div class="footer-columns">
+          <ul>
+            <li><a href="#">Audio y subtítulos</a></li>
+            <li><a href="#">Centro de ayuda</a></li>
+            <li><a href="#">Tarjetas de regalo</a></li>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Relaciones con inversionistas</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Empleo</a></li>
+            <li><a href="#">Términos de uso</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Preferencias de cookies</a></li>
+            <li><a href="#">Información corporativa</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Contáctanos</a></li>
+            <li><a href="#">Prueba de velocidad</a></li>
+            <li><a href="#">Avisos legales</a></li>
+            <li><a href="#">Originales de Netflix</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 Netflix Clone - Hecho con ❤️ para Celeste</p>
+        </div>
+      </footer>
+    <script>
+            const textoCarta = `Querida Celeste(mi pollito),
+
+Hoy quiero recordarte lo mucho que te amo y lo agradecido que estoy de tenerte en mi vida. Desde el día que nos conocimos, mi mundo ha cambiado para mejor, y no puedo imaginarlo sin ti.
+
+Gracias por cada momento compartido, cada risa, cada abrazo. Eres mi todo, y prometo estar siempre a tu lado, amándote y apoyándote en todo lo que haces.
+
+Con todo mi amor,
+Tu hermoso Novio`;
+
+    let i = 0;
+    const velocidad = 50; // Velocidad de escritura (milisegundos)
+
+    function escribirCarta() {
+        if (i < textoCarta.length) {
+            document.getElementById("carta").innerHTML += textoCarta.charAt(i);
+            i++;
+            setTimeout(escribirCarta, velocidad);
+        } else {
+            document.getElementById("carta").style.borderRight = "none"; // Quitar el cursor después de terminar
+        }
+    }
+
+    window.onload = escribirCarta;
+    </script>
+</body>
+</html>

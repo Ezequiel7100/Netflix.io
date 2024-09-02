@@ -1,0 +1,31 @@
+body{
+    background-color: black;
+    color : white;
+}
+.carta-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#carta {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    white-space: pre-wrap;
+    border-right: 3px solid rgba(255, 255, 255, 0.75); /* Simula el cursor */
+    overflow: hidden; /* Oculta el texto que no se ha mostrado aún */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(255, 255, 255, 0.75); }
+}
